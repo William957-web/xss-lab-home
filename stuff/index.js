@@ -17,7 +17,7 @@ app.use((req,res,next)=>{
 app.get('/',(req,res)=>{
 	let gift = req.cookies.gift ?? 'ICED{test-flag}'
 	let letter = (req.query.letter ?? `You were a good kid in 2023 so here's a gift for ya: $gift$`).toString()
-	res.send(`<pre>${letter.replace('$gift$',gift)}</pre><a href='letter=You can input something here'></a>`)
+	res.send(`<pre>${letter.replace('$gift$',gift)}</pre><a href='./?letter=You can input something here'></a>`)
 })
 
 app.listen(8000)
